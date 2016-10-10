@@ -18,17 +18,50 @@
         <property name="nombre" value="Lourdes Peña" />
     </bean>
     -->
+
+
+    <!-- CONCURSO DE TALENTOS v1 y v2-->
+
     <bean id="malabarista1" class="com.leosssdroid.ConcursoTalentosV2.Concursante.Malabarista">
         <constructor-arg value="5"></constructor-arg>
 
     </bean>
 
-    <bean id="poema" class="com.leosssdroid.ConcursoTalentosV2.Concursante.Soneto"/>
+    <bean id="poemaV2" class="com.leosssdroid.ConcursoTalentosV2.Concursante.Soneto"/>
 
     <bean id="malabarista2" class="com.leosssdroid.ConcursoTalentosV2.Concursante.MalabaristaRecitador">
         <constructor-arg value="10"></constructor-arg>
-    <constructor-arg ref="poema"></constructor-arg>
+    <constructor-arg ref="poemaV2"></constructor-arg>
     </bean>
+
+    <!-- CONCURSO DE TALENTOS v3-->
+    <bean id="malabaristaV3-1" class="com.leosssdroid.ConcursoTalentosV3.Concursante.Malabarista">
+        <constructor-arg value="5"></constructor-arg>
+    </bean>
+
+    <bean id="poemaV3" class="com.leosssdroid.ConcursoTalentosV3.Actividades.Soneto"/>
+
+    <bean id="malabaristaV3-2" class="com.leosssdroid.ConcursoTalentosV3.Concursante.MalabaristaRecitador">
+    <constructor-arg value="10"></constructor-arg>
+    <constructor-arg ref="poemaV3"></constructor-arg>
+    </bean>
+
+    <bean id="piano" class="com.leosssdroid.ConcursoTalentosV3.Actividades.Piano"/>  <!--Lo pueden utilizar todos los musicos-->
+
+    <bean id="jasonPiano" class="com.leosssdroid.ConcursoTalentosV3.Concursante.Musico">
+        <property name="cancion" value="Para Elisa de Beethoven"/>
+        <property name="instrumento" ref="piano"></property>
+    </bean>
+
+    <bean id="jasonSax" class="com.leosssdroid.ConcursoTalentosV3.Concursante.Musico">
+        <property name="cancion" value="Jazz de Louis Armstrong"/>
+        <property name="instrumento">
+            <bean id="saxofon" class="com.leosssdroid.ConcursoTalentosV3.Actividades.Saxofon"/> <!--Bean interno, solo lo puede usar UN músico, el que instancie el bean 'jasonSax-->
+        </property>
+    </bean>
+
+
+
 
 
 </beans>
