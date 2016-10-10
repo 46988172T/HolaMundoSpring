@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="holaMundo" class="com.leosssdroid.beans.HolaMundo">
+        <property name="mensaje" value="Hola Mundo desde BCN!!!"/>
+    </bean>
+    <!--
+    <bean id="interpreteEspanol" class="com.leosssdroid.ProyectoInterpreteV2.InterpreteEspanol"/>
+    <bean id="interpreteIngles" class="com.leosssdroid.ProyectoInterpreteV2.InterpreteIngles"/>
+    <bean id="traductorEspanol" class="com.leosssdroid.ProyectoInterpreteV2.TraductorSpring">
+        <property name="interprete" ref="interpreteEspanol"/>
+        <property name="nombre" value="Carlos Esparza"/>
+    </bean>
+    <bean id="traductorIngles" class="com.leosssdroid.ProyectoInterpreteV2.TraductorSpring">
+        <property name="interprete" ref="interpreteIngles"/>
+        <property name="nombre" value="Lourdes Peña" />
+    </bean>
+    -->
+    <bean id="malabarista1" class="com.leosssdroid.ConcursoTalentosV2.Concursante.Malabarista">
+        <constructor-arg value="5"></constructor-arg>
+
+    </bean>
+
+    <bean id="poema" class="com.leosssdroid.ConcursoTalentosV2.Concursante.Soneto"/>
+
+    <bean id="malabarista2" class="com.leosssdroid.ConcursoTalentosV2.Concursante.MalabaristaRecitador">
+        <constructor-arg value="10"></constructor-arg>
+    <constructor-arg ref="poema"></constructor-arg>
+    </bean>
+
+
+</beans>
